@@ -1,0 +1,15 @@
+{{title}}
+Details about {{pet.name}}
+<br>
+Pet type: {{pet.type}}
+<br>
+Description: {{pet.description}}
+<br>
+<br>
+Skills: <br>
+{{pet.skillOne}}<br>
+{{pet.skillTwo}}<br>
+{{pet.skillThree}}<br>
+<br>
+<button [routerLink]="['/']">Home</button>
+<button (click)="deletePet(pet._id)">Adopt this pet!</button>

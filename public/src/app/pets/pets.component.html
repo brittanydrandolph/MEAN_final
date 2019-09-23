@@ -1,0 +1,23 @@
+<h3>These pets are looking for a home!</h3>
+<button [routerLink]="['/pets/new']">Add a pet to the shelter</button>
+<div >
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pet of pets; let idx = index">
+            <td>{{pet.name}}</td>
+            <td>{{pet.type}}</td>
+            <td>
+                <button [routerLink]="['/pets/'+pet._id]">Details</button>
+                <button [routerLink]="[pet._id, 'edit']">Edit</button> 
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>

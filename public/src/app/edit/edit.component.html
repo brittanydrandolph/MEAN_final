@@ -1,0 +1,25 @@
+<h3>Edit this pet</h3>
+<form (submit)="editSubmit()">
+    <h4 *ngIf="!name.valid">The pet must have a name of at least 3 characters in length.</h4>
+    <h4 *ngIf="!type.valid">The pet must have a type of at least 3 characters in length.</h4>
+    <h4 *ngIf="!description.valid">The pet must have a description of at least 3 characters in length.</h4>
+
+    Pet name: <input type="text" name="Editpet.name" [(ngModel)] = "Editpet.name" 
+        required minlength="3" #name="ngModel" value="pet.name">
+        <br>
+    Pet type: <input type="text" name="Editpet.type" [(ngModel)] = "Editpet.type"
+    required minlength="3" #type="ngModel" value="pet.type">
+    <br>
+    Pet description: <input type="text" name="Editpet.description" [(ngModel)] = "Editpet.description" 
+    required minlength="3" #description="ngModel" value="pet.description">
+    <br>
+    Skills (optional):
+    <br>
+    Skill 1: <input type="text" name="Editpet.skillOne" [(ngModel)] = "Editpet.skillOne" value="pet.skillOne">
+    <br>
+    Skill 2: <input type="text" name="Editpet.skillTwo" [(ngModel)] = "Editpet.skillTwo" value="pet.skillTwo">
+    <br>
+    Skill 3: <input type="text" name="Editpet.skillThree" [(ngModel)] = "Editpet.skillThree" value="pet.skillThree">
+    <input *ngIf="name.valid && type.valid && description.valid "type="submit" value="Edit pet">
+    <button [routerLink]="['/pets/'+Editpet._id]">Cancel</button>
+</form>
